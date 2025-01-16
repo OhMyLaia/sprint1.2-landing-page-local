@@ -1,0 +1,41 @@
+$color : rgb(249, 154, 116);
+$p : 15px;
+$h1 : $p * 3;
+
+// muy guay lo del parametro pero no compila ninguno
+// si te olvidas de pasarselo a algun @include !!
+@mixin titleStyles ($color) {
+    color: black;
+    background-color: $color;
+
+}
+
+
+body {
+    background-color: $color;
+    color: white;
+}
+
+p {
+    font: {
+        size: $p;
+        family: serif;
+        weight: bold;
+    }
+}
+
+h1 {
+    font-size: $h1;
+    @include titleStyles(pink);
+}
+
+h2 {
+    @include titleStyles(blue);
+
+}
+
+h3 {
+    font-family: arial;
+    @include titleStyles(tomato);
+
+}
