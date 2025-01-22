@@ -1,2 +1,131 @@
-@import 'node_modules/bootstrap/scss/bootstrap';
+// @import 'node_modules/bootstrap/scss/bootstrap';
+@use 'node_modules/bootstrap/scss/bootstrap' as *;
 
+$primary: rgb(69, 69, 240);
+$myDarkGrey: rgb(46, 45, 45);
+$myTomato: rgb(251, 90, 16);
+
+body {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: white;
+    
+}
+
+#navbarNav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: white;
+    padding-left: 7em;
+    padding-right: 7em;
+    gap: 3em;
+
+    .nav-link {
+        padding: 1em;
+    }
+
+    .nav-link:hover {
+        color: $myTomato;
+    }
+
+    #loginButton {
+        display: flex;
+        color: black;
+        border-color: black;
+        border-width: 1px;
+        border-radius: 0.5em;
+        width: 8em;
+        // text-align: center;
+        // text-justify: auto;
+        text-align: center;
+        display:table-cell;
+        vertical-align:middle;
+    }
+
+    #loginButton:hover {
+        color: $myTomato;
+        border-color:  $myTomato;
+        background-color: white;
+    }
+
+}
+
+#main-cont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: repeat(2, 1fr);
+    #description-cont {
+        grid-column: 1;
+        padding-left: 7em;
+
+        h1 {
+            width: 50%;
+        }
+
+        p {
+            width: 90%;
+            font-size: large;
+        }
+
+        .btn-group {
+            // display: flex;
+            // flex-flow: row;
+            // justify-content: flex-start;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 0;
+            gap: 2em;
+
+            #browser-btn-1 {
+                grid-column: 1;
+                color: $myDarkGrey;
+                border-color: $myDarkGrey;
+                border-radius: 0.5em;
+            }
+
+            #browser-btn-1:hover {
+                background-color: white;
+                color: $primary;
+                border-color: $primary;
+                box-shadow: 0.1px 0.1px 2px;
+            }
+
+            #browser-btn-2 {
+                grid-column: 2;
+                color: $myDarkGrey;
+                border-color: $myDarkGrey;
+                border-radius: 0.5em;
+            }
+
+            #browser-btn-2:hover {
+                background-color: white;
+                color: $primary;
+                border-color: $primary;
+                box-shadow: 0.1px 0.1px 2px;
+            }
+        }
+    }
+
+    #preview-cont {
+        grid-column: 2;
+        position: relative;
+        overflow: hidden;
+
+
+        #rounded-blue-shape-header {
+            position: absolute;
+            background-color: $primary;
+            width: 100em;
+            height: 20em;
+            border-radius: 100em;
+            padding: 1em;
+            z-index: -1;
+            position: absolute; /* Para posicionarlo libremente dentro del contenedor */
+            top: 160px; /* Coloca parte del elemento debajo del contenedor */
+            left: 250px;
+            right: 1;
+        }
+    }
+}
